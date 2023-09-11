@@ -1,0 +1,38 @@
+.Reveal_op {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Reveal_op .operators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #452247;
+  border-radius: 20px;
+  background-color: #502653;
+  box-shadow: #3d1d3f 0px 0px 50px 10px;
+  animation: op_intro 2s 0s 1 forwards cubic-bezier(0.78, 0.73, 0.17, 1);
+}
+
+.Reveal_op .operators .icon img {
+  width: 70px;
+}
+
+@media (max-width: 610px) {
+  .Reveal_op .operators .icon img {
+    width: 50px;
+  }
+}
+
+@keyframes op_intro {
+  0% {
+    opacity: 0%;
+    transform: translateZ(-50px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateZ(0px);
+  }
+}

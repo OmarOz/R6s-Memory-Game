@@ -1,0 +1,25 @@
+.HistoryList {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 50px 0;
+  padding: 0;
+}
+.HistoryList .history-preview {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 3px solid #452247;
+  border-radius: 10px;
+  background-color: #502653;
+  width: 320px;
+  height: 100px;
+  color: white;
+}
+.HistoryList .history-preview div {
+  font-size: 18px;
+}

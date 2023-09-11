@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500&display=swap");
+
+* {
+  font-family: "Raleway", sans-serif;
+  box-sizing: border-box;
+}
+.App {
+  max-width: 860px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  perspective: 500px;
+  transform-style: preserve-3d;
+}
+/* h1 {
+  color: #502653;
+  opacity: 80%;
+} */
+
+button {
+  background-color: transparent;
+  color: white;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  border: 2px #502653 solid;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier();
+}
+.App button {
+  color: #3d1d3f;
+  font-weight: 500;
+}
+button:hover {
+  background-color: #502653;
+  border: 2px #3d1d3f solid;
+  color: white;
+}
+button:active {
+  background-color: #3d1d3f;
+  color: white;
+}
+.card-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  padding: 40px;
+  background-color: #502653;
+  border-radius: 20px;
+  opacity: 0%;
+  width: 600px;
+  height: 500px;
+  box-shadow: #3d1d3f 0px 0px 50px 10px;
+  animation: grid_intro 2s 0.5s 1 forwards cubic-bezier(0.78, 0.73, 0.17, 1);
+}
+
+.win {
+  background-color: rgb(9, 186, 9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  border: solid 2px rgb(9, 160, 9);
+}
+
+.turns {
+  background-color: #502653;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  border: solid 2p #3d1d3f;
+}
+
+@keyframes grid_intro {
+  0% {
+    opacity: 0%;
+    transform: translateZ(-50px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateZ(0px);
+  }
+}
+
+@media (max-width: 610px) {
+  .card-grid {
+    width: 300px;
+    height: 280px;
+    gap: 10px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 750px) and (min-width: 600px) {
+  .card-grid {
+    width: 450px;
+    height: 400px;
+    gap: 10px;
+    padding: 20px;
+  }
+}
