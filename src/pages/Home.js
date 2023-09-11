@@ -83,10 +83,15 @@ function App({ history }) {
   const [win, setWin] = useState(false);
   const [operators_icons, setOperators] = useState([]);
   const [Data, setData] = useState(null);
+  const [memoryTime, setMemoryTime] = useState(true);
 
   const { data, loading, error } = useFetch(
     "https://omaroz.github.io/memory-game-history-api/History.json"
   );
+
+  setTimeout(() => {
+    setMemoryTime(false);
+  }, 1500);
 
   const random_operators = () => {
     const random_cards = [...cardImages]
@@ -97,6 +102,7 @@ function App({ history }) {
     console.log("ard_arr", card_arr);
 
     shuffleCards(card_arr);
+    setMemoryTime(true);
   };
 
   const shuffleCards = (operators_cards) => {
@@ -181,7 +187,10 @@ function App({ history }) {
             handleChoice={handleChoice}
             disable={disable}
             flipped={
-              card === firstChoice || card === secondChoice || card.match
+              memoryTime ||
+              card === firstChoice ||
+              card === secondChoice ||
+              card.match
             }
           />
         ))}
