@@ -89,9 +89,11 @@ function App({ history }) {
     "https://omaroz.github.io/memory-game-history-api/History.json"
   );
 
-  setTimeout(() => {
-    setMemoryTime(false);
-  }, 1500);
+  const showFirst = () => {
+    setTimeout(() => {
+      setMemoryTime(false);
+    }, 1500);
+  };
 
   const random_operators = () => {
     const random_cards = [...cardImages]
@@ -103,6 +105,7 @@ function App({ history }) {
 
     shuffleCards(card_arr);
     setMemoryTime(true);
+    showFirst();
   };
 
   const shuffleCards = (operators_cards) => {
